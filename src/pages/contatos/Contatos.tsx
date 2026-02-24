@@ -2,11 +2,10 @@ import { useContext } from "react";
 import { Header } from "../../components/header/Header";
 import * as C from "../../components/header2/Header2.style";
 import * as S from "./Contatos.style";
-import { FriendsContext, type Amigo } from "../../contexts/FriendsContext";
+import { DadosUserContext, type Amigo } from "../../contexts/DadosUserContext";
 
 export const Contatos = () => {
-  const { amigos } = useContext(FriendsContext);
-  
+  const { amigos } = useContext(DadosUserContext);
 
   return (
     <>
@@ -19,12 +18,12 @@ export const Contatos = () => {
       <S.DivAmigos>
         {amigos && amigos.length > 0 ? (
           amigos.map((dados: Amigo) => (
-           <S.DivContato key={dados.id_amigo}>
-            <S.foto $img={dados.imagem}></S.foto>
-            <S.Nome>
-            {dados.nome}
-            </S.Nome>
-           </S.DivContato>
+            <S.StyledLink to={`/conversas/${dados.id_amigo}`}>
+              <S.DivContato key={dados.id_amigo}>
+                <S.foto $img={dados.imagem}></S.foto>
+                <S.Nome>{dados.nome}</S.Nome>
+              </S.DivContato>
+            </S.StyledLink>
           ))
         ) : (
           <p>Nenhum amigo encontrado ou carregando...</p>

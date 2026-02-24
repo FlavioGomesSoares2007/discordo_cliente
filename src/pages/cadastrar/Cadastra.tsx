@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 export const Cadastra = () => {
   const [carregar, setCarregar] = useState<boolean>(false);
   const navegar = useNavigate();
+  
 
   const {
     register,

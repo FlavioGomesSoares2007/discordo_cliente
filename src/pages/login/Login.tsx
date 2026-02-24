@@ -13,8 +13,8 @@ export const Login = () => {
 
   const navegar = useNavigate();
 
-  const Login = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const Login = async (e: React.BaseSyntheticEvent) => {
+    e.preventDefault()
     setCarregar(true);
     try {
       const response = await api.post("login", {
