@@ -37,7 +37,7 @@ export const foto = styled.div<{ $img: string | null }>`
   width: 50px;
   border-radius: 50%;
 
-  background-color: aliceblue;
+  background-color: #fff;
   margin: 3px 0 0 3px;
 `;
 

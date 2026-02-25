@@ -15,7 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { api } from "../../service/api";
 
 export const Conversas = () => {
-  const { messages, userId, amigos } = useContext(DadosUserContext);
+  const { messages, user, amigos } = useContext(DadosUserContext);
   const mensagensEndRef = useRef<HTMLDivElement>(null);
   const {
     register,
@@ -31,7 +31,7 @@ export const Conversas = () => {
   const idAmigo = Number(id);
 
   const mineOrNot = (id: number) => {
-    if (id === userId) {
+    if (id === user?.id_user) {
       return true;
     } else {
       return false;
@@ -60,6 +60,7 @@ export const Conversas = () => {
       reset();
     }
   };
+  
 
   return (
     <>
@@ -85,10 +86,10 @@ export const Conversas = () => {
           messages
             .filter(
               (mensagens) =>
-                (mensagens.id_sender === userId &&
+                (mensagens.id_sender === user!.id_user &&
                   mensagens.id_recipient === idAmigo) ||
                 (mensagens.id_sender === idAmigo &&
-                  mensagens.id_recipient === userId),
+                  mensagens.id_recipient === user!.id_user),
             )
             .map((dados: message) => (
               <S.BalaoConversa

@@ -16,7 +16,7 @@ export const Header = () => {
       {menu && (
         <S.MenuLateral $ativo={menu}>
           <S.ButtonMenu>
-            <S.LintStyled to={"/conf"}>Configuração</S.LintStyled>
+            <S.LintStyled to={"/conf"}>Configurações</S.LintStyled>
           </S.ButtonMenu>
           <S.ButtonMenu>
             <S.LintStyled to={"/adicionar/amigos"}>Novos Amigos</S.LintStyled>

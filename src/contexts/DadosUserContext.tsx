@@ -7,6 +7,13 @@ interface novoAmigo {
   nome: string;
   imagem: string | null;
 }
+
+export interface User {
+  id_user: number;
+  nome: string;
+  imagem: string | null;
+}
+
 export interface Amigo {
   id_amigo: number;
   nome: string;
@@ -29,7 +36,7 @@ export interface message {
 }
 
 interface DadosUserContextData {
-  userId: number;
+  user: User | null;
   messages: message[];
   recipient: pedidosRecebidos[];
   amigos: Amigo[];
@@ -43,13 +50,14 @@ export const DadosUserProvider = ({ children }: { children: ReactNode }) => {
   const [amigos, setAmigos] = useState<Amigo[]>([]);
   const [recipient, setRecipient] = useState<pedidosRecebidos[]>([]);
   const [messages, setMessages] = useState<message[]>([]);
-  const [userId, setUserId] = useState<number>(0);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const buscarDadosIniciais = async () => {
       try {
         const response = await api.get("/user/see/data");
-        setUserId(response.data.id_user);
+        setUser(response.data);
+        
         setAmigos(response.data.friends || []);
         setRecipient(response.data.recipient || []);
 
@@ -59,8 +67,8 @@ export const DadosUserProvider = ({ children }: { children: ReactNode }) => {
         const message = await api.get("/message");
         setMessages(message.data || []);
       } catch (error) {
-        console.error("Erro ao carregar lista de amigos:", error);
-      } 
+        console.error(error);
+      }
     };
 
     buscarDadosIniciais();
@@ -90,6 +98,7 @@ export const DadosUserProvider = ({ children }: { children: ReactNode }) => {
         );
       });
     });
+
     socket.on("request_sent", (dados: any) => {
       if (dados.sender) {
         interface novoPedido {
@@ -154,18 +163,35 @@ export const DadosUserProvider = ({ children }: { children: ReactNode }) => {
       });
     });
 
+    socket.on("update", (dados: any) => {
+      const update: User = dados;
+
+      setAmigos((listaAnterior) => {
+        const exist = listaAnterior.filter(
+          (amigo) => amigo.id_amigo !== update.id_user,
+        );
+
+        const amigoFormatado: Amigo = {
+          id_amigo: update.id_user,
+          imagem: update.imagem,
+          nome: update.nome
+        };
+
+        return [...exist, amigoFormatado];
+      });
+    });
+
     return () => {
       socket.off("newFriend");
       socket.off("request_sent");
       socket.off("requestRemoved");
       socket.off("new_message");
+      socket.off("update");
     };
   }, []);
 
   return (
-    <DadosUserContext.Provider
-      value={{ userId, messages, recipient, amigos}}
-    >
+    <DadosUserContext.Provider value={{ user, messages, recipient, amigos }}>
       {children}
     </DadosUserContext.Provider>
   );

@@ -6,6 +6,7 @@ import { DadosUserProvider } from "./contexts/DadosUserContext";
 import { AdicionarAmigo } from "./pages/amigos/adicionar/AdicionarAmigo";
 import { AceitarAmigos } from "./pages/amigos/aceitar/AceitarAmigos";
 import { Conversas } from "./pages/conversas/Conversas";
+import { Configuracoes } from "./pages/configuraçao/Configuracoes";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/adicionar/amigos" element={<AdicionarAmigo />} />
           <Route path="/aceitar/amigos" element={<AceitarAmigos />} />
           <Route path="/conversas/:id" element={<Conversas />} />
+          <Route path="/conf" element={<Configuracoes />} />
         </Routes>
       </DadosUserProvider>
     </>

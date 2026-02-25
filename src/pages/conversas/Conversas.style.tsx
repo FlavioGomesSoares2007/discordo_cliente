@@ -68,10 +68,12 @@ export const Foto = styled.div<{ $img: string | null }>`
   background-repeat: no-repeat;
   background-size: cover;
 
-  margin: 1.5% 0 0 0;
+  margin: ${(props) =>
+    props.$img ? `1% 0 0 0` : `-1.3% 0 0 0`};
 
-  height: 7vh;
-  width: 12vw;
+  height:${(props) =>
+    props.$img ? `7.6vh` : `10vh`};
+  width: 13vw;
 
   border-radius: 50%;
 `;
