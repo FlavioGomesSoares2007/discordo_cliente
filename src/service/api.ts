@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL:"https://discordo-api.onrender"
+    baseURL:"https://discordo-api.onrender.com"
 })
 api.interceptors.request.use((config) => {
     
