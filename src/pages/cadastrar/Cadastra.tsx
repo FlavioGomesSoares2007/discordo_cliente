@@ -48,21 +48,21 @@ export const Cadastra = () => {
 
           <S.Box_input>
             <S.Label htmlFor="nome">Nome:</S.Label>
-            <S.Input type="text" id="nome" {...register("nome")} />
+            <S.Input type="text" autoComplete="off" id="nome" {...register("nome")} />
           </S.Box_input>
 
           {errors.nome && <S.Error>{errors.nome?.message}</S.Error>}
 
           <S.Box_input>
             <S.Label htmlFor="email">Email:</S.Label>
-            <S.Input type="email" id="email" {...register("email")} />
+            <S.Input type="email" autoComplete="off" id="email" {...register("email")} />
           </S.Box_input>
 
           {errors.email && <S.Error>{errors.email?.message}</S.Error>}
 
           <S.Box_input>
             <S.Label htmlFor="senha">Senha:</S.Label>
-            <S.Input type="password" id="senha" {...register("senha")} />
+            <S.Input type="password" autoComplete="off" id="senha" {...register("senha")} />
           </S.Box_input>
 
           {errors.senha && <S.Error>{errors.senha?.message}</S.Error>}

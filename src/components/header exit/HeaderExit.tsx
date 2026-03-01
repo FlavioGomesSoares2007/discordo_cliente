@@ -1,15 +1,17 @@
 import * as S from "./HeaderExit.style";
 
-interface HeaderTitulo {
+interface Header {
   titulo: string;
+  url: string;
 }
 
-export const HeaderExit = ({ titulo }: HeaderTitulo) => {
+
+export const HeaderExit = ({ titulo,  url  }: Header) => {
   return (
     <>
       <S.Header>
         <S.ButtonVoltar>
-          <S.StyledLink to={"/contatos"}>
+          <S.StyledLink to={url}>
             <S.ArrowBack />
           </S.StyledLink>
         </S.ButtonVoltar>

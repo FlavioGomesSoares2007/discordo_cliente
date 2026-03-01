@@ -7,6 +7,8 @@ import { DadosUserContext, type Amigo } from "../../contexts/DadosUserContext";
 export const Contatos = () => {
   const { amigos } = useContext(DadosUserContext);
 
+  if (!amigos)return <div></div>
+
   return (
     <>
       <Header />

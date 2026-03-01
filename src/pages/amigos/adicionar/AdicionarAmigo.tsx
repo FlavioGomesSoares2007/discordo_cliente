@@ -42,6 +42,7 @@ export const AdicionarAmigo = () => {
           <S.Input
             id="nome"
             value={nome}
+            autoComplete="off"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setNome(e.target.value)
             }

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as S from "./Login.style";
 import { api } from "../../service/api";
 import { useNavigate } from "react-router-dom";
-import { socket } from "../../service/socket";
+import { DadosUserContext } from "../../contexts/DadosUserContext";
 
 export const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -11,10 +11,12 @@ export const Login = () => {
   const [fechando, setFechando] = useState(false);
   const [carregar, setCarregar] = useState<boolean>(false);
 
+  const { buscarDadosIniciais } = useContext(DadosUserContext);
+
   const navegar = useNavigate();
 
   const Login = async (e: React.BaseSyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     setCarregar(true);
     try {
       const response = await api.post("login", {
@@ -23,6 +25,8 @@ export const Login = () => {
       });
 
       localStorage.setItem("@Discordo:token", response.data);
+
+      await buscarDadosIniciais();
 
       navegar("/contatos");
     } catch (error) {
@@ -59,6 +63,7 @@ export const Login = () => {
             <S.Label htmlFor="email">Email:</S.Label>
             <S.Input
               type="email"
+              autoComplete="off"
               id="email"
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -71,6 +76,7 @@ export const Login = () => {
             <S.Label htmlFor="senha">Senha:</S.Label>
             <S.Input
               type="password"
+              autoComplete="off"
               id="senha"
               value={senha}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
