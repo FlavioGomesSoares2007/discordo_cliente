@@ -90,7 +90,7 @@ export const Form = styled.form`
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 8vh;
+  height: 15vh;
 
   display: flex;
   justify-content: center;
