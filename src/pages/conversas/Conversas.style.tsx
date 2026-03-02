@@ -16,7 +16,7 @@ export const DivParede = styled.div`
   overflow-y: auto;
 
   width: 100vw;
-  height: 84vh;
+  height: 80vh;
 `;
 
 export const LinkStyle = styled(Link)``;
@@ -90,7 +90,7 @@ export const Form = styled.form`
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 15vh;
+  height: 12vh;
 
   display: flex;
   justify-content: center;
