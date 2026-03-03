@@ -17,7 +17,7 @@ export const DivContato = styled.div`
 
   display: flex;
 
-  margin: 3% 14px 0 4%;
+  margin: 2% 14px 0 4%;
 `;
 
 export const Nome = styled.p`

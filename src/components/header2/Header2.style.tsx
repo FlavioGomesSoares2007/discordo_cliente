@@ -7,7 +7,6 @@ export const Header2 = styled.div`
   width: 100vw;
   height: 10vh;
 
-
   display: flex;
   gap: 10px;
 `;
@@ -22,9 +21,10 @@ export const LinkStyled = styled(Link)<{ $ativo: boolean }>`
   color: ${(props) => (props.$ativo ? ` #c3c3c3` : `#fff`)};
   text-decoration: none;
 
-  padding: 5px;
-
   margin: 4px 0 10px 14px;
 
   height: 3vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 `;

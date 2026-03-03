@@ -72,10 +72,10 @@ export const Foto = styled.div<{ $img: string | null }>`
     props.$img ? `1% 0 0 0` : `-1.3% 0 0 0`};
 
   height:${(props) =>
-    props.$img ? `7.6vh` : `10vh`};
-  width: 13vw;
+    props.$img ? `6.8vh` : `9vh`};
+  width: 14vw;
 
-  border-radius: 50%;
+  border-radius: 90%;
 `;
 
 export const Nome = styled.span`
