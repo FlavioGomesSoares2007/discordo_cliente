@@ -1,6 +1,7 @@
 import { io } from "socket.io-client";
 
-const URL = "https://discordo-api.onrender.com";
+const URL =
+  import.meta.env.VITE_URL_TESTE || "https://discordo-api.onrender.com";
 
 export const socket = io(URL, {
   autoConnect: false,

@@ -1,7 +1,7 @@
 import axios from "axios";
-
+const urlBase = import.meta.env.VITE_URL_TESTE || "https://discordo-api.onrender.com";
 export const api = axios.create({
-    baseURL:"https://discordo-api.onrender.com"
+   baseURL:urlBase
 })
 api.interceptors.request.use((config) => {
     
