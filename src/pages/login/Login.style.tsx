@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import wallpaper from "../../assets/login/ChatGPT Image 19 de fev. de 2026, 16_32_03.png";
-import robo from "../../assets/login/ChatGPT Image 19 de fev. de 2026, 16_13_46.png";
+import wallpaper from "../../assets/login/foto_login_1000.png";
 import { Link } from "react-router-dom";
 
 export const Background = styled.div`
@@ -14,21 +13,6 @@ export const Background = styled.div`
 
   display: flex;
   justify-content: center;
-`;
-
-export const img_robo = styled.div`
-  background-image: url(${robo});
-  position: fixed;
-  z-index: 999;
-  top: 1ch;
-  left: 80%;
-
-  height: 200px;
-  width: 200px;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: -55px;
 `;
 
 export const Formulario = styled.form`
@@ -57,7 +41,7 @@ export const Titulo = styled.h1`
 `;
 
 export const Box_input = styled.div`
-  background-color: #2c2c2c;
+  background-color: #303030;
 
   display: flex;
   justify-content: center;
@@ -74,7 +58,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  background-color: #2c2c2c;
+  background-color: #303030;
   border: none;
 
   margin-left: 10px;
@@ -87,11 +71,7 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #333 inset !important;
 
-    -webkit-text-fill-color: white !important;
-  }
 `;
 
 export const Button = styled.button`

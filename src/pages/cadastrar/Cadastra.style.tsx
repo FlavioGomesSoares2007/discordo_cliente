@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import wallpaper from "../../assets/cadastrar/ChatGPT Image 19 de fev. de 2026, 22_49_17.png";
+import wallpaper from "../../assets/cadastrar/foto_cadastrar_800.png";
 import { Link } from "react-router-dom";
 
 export const Background = styled.div`
@@ -41,7 +41,7 @@ export const Titulo = styled.h1`
 `;
 
 export const Box_input = styled.div`
-  background-color: #2c2c2c;
+  background-color: #303030;
 
   display: flex;
   justify-content: center;
@@ -58,7 +58,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  background-color: #2c2c2c;
+  background-color: #303030;
   border: none;
 
   margin-left: 10px;
@@ -80,7 +80,7 @@ export const Input = styled.input`
 
 
 export const InputSenha = styled.input`
-  background-color: #2c2c2c;
+  background-color:#303030;
   border: none;
 
   margin-left: 10px;

@@ -49,7 +49,6 @@ export const Login = () => {
   return (
     <>
       <S.Background>
-        <S.img_robo></S.img_robo>
         {error && (
           <S.ErrorAlert isClosing={fechando}>
             <S.TextoError>⚠️ E-mail ou senha incorretos!</S.TextoError>
