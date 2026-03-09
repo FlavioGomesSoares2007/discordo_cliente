@@ -16,7 +16,7 @@ export const DivParede = styled.div`
   overflow-y: auto;
 
   width: 100vw;
-  height: 80vh;
+  height: 80dvh;
 `;
 
 export const LinkStyle = styled(Link)``;
