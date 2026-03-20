@@ -24,7 +24,7 @@ export const LinkStyle = styled(Link)``;
 export const BalaoConversa = styled.div<{ $enviadaPorMim: boolean }>`
   max-width: 70%;
   padding: 12px;
-  margin: 2% 0 2% 0 ;
+  margin: 2% 0 2% 0;
 
   border-radius: 15px;
   word-wrap: break-word;
@@ -59,7 +59,7 @@ export const MiniPerfil = styled.div`
   height: 8vh;
 
   display: flex;
-  align-items:center;
+  align-items: center;
 `;
 
 export const Foto = styled.div<{ $img: string | null }>`
@@ -69,22 +69,22 @@ export const Foto = styled.div<{ $img: string | null }>`
   background-repeat: no-repeat;
   background-size: cover;
 
-  margin: ${(props) =>
-    props.$img ? `0.1% 0 0 0` : `0.1% 0 0 0`};
+  margin: ${(props) => (props.$img ? `0.1% 0 0 0` : `0.1% 0 0 0`)};
 
-  height:95%;
+  height: 95%;
   width: 4.5%;
 
   border-radius: 90%;
+
+  @media (max-width: 550px) {
+    width: 18%;
+  }
 `;
 
 export const Nome = styled.span`
   margin: 0 0 0 2%;
   font-size: 20px;
   color: aliceblue;
-
-
-
 `;
 
 export const Form = styled.form`
