@@ -13,6 +13,11 @@ export const Foto = styled.div<{ $img: string | null }>`
 
   height: 23vh;
   width: 40vw;
+
+  @media (min-width: 550px) {
+    height: 40vh;
+    width: 20vw;
+  }
 `;
 
 export const Conteiner = styled.form`
@@ -79,7 +84,7 @@ export const Button = styled.button`
 
   color: #fff;
 
-  height:5vh;
+  height: 5vh;
   width: 20vw;
   border-radius: 30px;
 `;

@@ -19,7 +19,7 @@ export const Login = () => {
     e.preventDefault();
     setCarregar(true);
     try {
-      const response = await api.post("login", {
+      const response = await api.post("/login", {
         email: email,
         senha: senha,
       });
