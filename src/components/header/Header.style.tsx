@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Header = styled.div`
   background-color: #333;
-  width: 100vw;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -31,8 +31,8 @@ export const Menu = styled.button`
 
   border: none;
 
-  height: 50px;
-  width: 50px;
+  height: 10vh;
+  width: 10vw;
 
   cursor: pointer;
 `;
@@ -82,8 +82,6 @@ export const ButtonEnv = styled.button`
 
   position: fixed;
   z-index: 999;
-  top: 0;
-  left: 0;
 `;
 
 export const LintStyled = styled(Link)`

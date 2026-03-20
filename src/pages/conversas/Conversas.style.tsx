@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PapelParede from "../../assets/conversas/ChatGPT Image 23 de fev. de 2026, 23_42_19.png";
+import PapelParede from "../../assets/conversas/conversa_400.png";
 import { BiPaperPlane, BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import fotoPadrao from "../../assets/perfil/ChatGPT Image 21 de fev. de 2026, 23_14_37.png";
@@ -59,6 +59,7 @@ export const MiniPerfil = styled.div`
   height: 8vh;
 
   display: flex;
+  align-items:center;
 `;
 
 export const Foto = styled.div<{ $img: string | null }>`
@@ -69,19 +70,21 @@ export const Foto = styled.div<{ $img: string | null }>`
   background-size: cover;
 
   margin: ${(props) =>
-    props.$img ? `1% 0 0 0` : `-1.3% 0 0 0`};
+    props.$img ? `0.1% 0 0 0` : `0.1% 0 0 0`};
 
-  height:${(props) =>
-    props.$img ? `6.8vh` : `9vh`};
-  width: 14vw;
+  height:95%;
+  width: 4.5%;
 
   border-radius: 90%;
 `;
 
 export const Nome = styled.span`
-  margin: 2% 0 0 2%;
+  margin: 0 0 0 2%;
   font-size: 20px;
   color: aliceblue;
+
+
+
 `;
 
 export const Form = styled.form`

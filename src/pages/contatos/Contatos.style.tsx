@@ -3,11 +3,18 @@ import fotoPadrao from "../../assets/perfil/ChatGPT Image 21 de fev. de 2026, 23
 import { Link } from "react-router-dom";
 
 export const DivAmigos = styled.div`
-  width: 100vw;
-  height: 84.5vh;
+  width: 100%;
+  height: 80vh;
   background-color: #333;
   
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 `;
 
 export const DivContato = styled.div`
@@ -16,6 +23,14 @@ export const DivContato = styled.div`
   width: 90vw;
 
   display: flex;
+
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 
   margin: 2% 14px 0 4%;
 `;
